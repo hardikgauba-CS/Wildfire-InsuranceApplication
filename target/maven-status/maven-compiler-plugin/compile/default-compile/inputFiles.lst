@@ -1,0 +1,8 @@
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/model/Item.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/model/User.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/util/DatabaseConnection.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/dao/ItemDAO.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/dao/UserDAO.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/dao/RoomDAO.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/app/DatabaseInitializer.java
+/Users/jvglvn/CS157/src/main/java/com/wildfireinventory/model/Room.java

@@ -1,0 +1,101 @@
+# Java
+*.class
+*.log
+
+# Maven
+.target/
+!.target/test-classes/
+!.target/classes/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Build files
+build/
+dist/
+
+# Local configuration
+application.properties
+application.yml
+
+# Test reports
+target/surefire-reports/
+target/failsafe-reports/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Coverage reports
+cobertura.ser
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Database configuration
+*.sql
+*.sql.gz
+
+# Eclipse
+.settings/
+bin/
+.classpath
+.project
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Target directory
+.target/
+
+# Maven repository
+.m2/repository/
+
+# Gradle
+.gradle/
+build/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

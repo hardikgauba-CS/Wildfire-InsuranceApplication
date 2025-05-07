@@ -1,0 +1,8 @@
+com/wildfireinventory/model/Room.class
+com/wildfireinventory/model/User.class
+com/wildfireinventory/util/DatabaseConnection.class
+com/wildfireinventory/dao/UserDAO.class
+com/wildfireinventory/dao/RoomDAO.class
+com/wildfireinventory/model/Item.class
+com/wildfireinventory/app/DatabaseInitializer.class
+com/wildfireinventory/dao/ItemDAO.class
