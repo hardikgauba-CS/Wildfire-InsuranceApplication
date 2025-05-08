@@ -28,7 +28,8 @@ public class DatabaseInitializer {
             user1.setPasswordHash("hashed_password1");
             user1.setPhoneNumber("555-1234");
             user1.setAddress("123 Main St");
-            int userId1 = userDAO.createUser(user1);
+            User createdUser1 = userDAO.createUser(user1);
+            int userId1 = createdUser1.getUserId();
 
             User user2 = new User();
             user2.setFirstName("Jane");
@@ -37,7 +38,8 @@ public class DatabaseInitializer {
             user2.setPasswordHash("hashed_password2");
             user2.setPhoneNumber("555-5678");
             user2.setAddress("456 Oak Ave");
-            int userId2 = userDAO.createUser(user2);
+            User createdUser2 = userDAO.createUser(user2);
+            int userId2 = createdUser2.getUserId();
 
             // Create rooms for user1
             Room livingRoom = new Room();

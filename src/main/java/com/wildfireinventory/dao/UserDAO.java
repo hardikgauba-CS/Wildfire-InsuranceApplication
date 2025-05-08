@@ -17,7 +17,7 @@ public class UserDAO {
         this.connection = DatabaseConnection.getConnection();
     }
 
-    public int createUser(User user) throws SQLException {
+    public User createUser(User user) throws SQLException {
         String sql = "INSERT INTO Users (first_name, last_name, email, password_hash, phone_number, address) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, user.getFirstName());
@@ -30,7 +30,9 @@ public class UserDAO {
             stmt.executeUpdate();
             ResultSet generatedKeys = stmt.getGeneratedKeys();
             if (generatedKeys.next()) {
-                return generatedKeys.getInt(1);
+                int userId = generatedKeys.getInt(1);
+                user.setUserId(userId);
+                return user;
             }
             throw new SQLException("Failed to create user - no ID generated");
         }
