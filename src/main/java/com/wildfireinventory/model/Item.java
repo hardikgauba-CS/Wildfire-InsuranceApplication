@@ -17,6 +17,7 @@ public class Item {
     private String condition;
     private String description;
     private Timestamp createdAt;
+    private int categoryId;
 
     public int getItemId() { return itemId; }
     public void setItemId(int itemId) { this.itemId = itemId; }
@@ -53,4 +54,11 @@ public class Item {
 
     public Timestamp getCreatedAt() { return createdAt; }
     public void setCreatedAt(Timestamp createdAt) { this.createdAt = createdAt; }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 }
