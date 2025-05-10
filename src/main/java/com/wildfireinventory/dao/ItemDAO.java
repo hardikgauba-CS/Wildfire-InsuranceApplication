@@ -24,7 +24,7 @@ public class ItemDAO {
     }
 
     public Item createItem(Item item) throws SQLException {
-        String sql = "INSERT INTO items (room_id, item_name, brand, model, serial_number, purchase_date, purchase_price, current_value, condition, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO items (room_id, item_name, brand, model, serial_number, purchase_date, purchase_price, current_value, condition, description, category_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             stmt.setInt(1, item.getRoomId());
             stmt.setString(2, item.getItemName());
@@ -36,6 +36,7 @@ public class ItemDAO {
             stmt.setBigDecimal(8, item.getCurrentValue());
             stmt.setString(9, item.getCondition());
             stmt.setString(10, item.getDescription());
+            stmt.setInt(11, item.getCategoryId());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -104,7 +105,7 @@ public class ItemDAO {
     }
 
     public boolean updateItem(Item item) throws SQLException {
-        String sql = "UPDATE items SET item_name = ?, brand = ?, model = ?, serial_number = ?, purchase_date = ?, purchase_price = ?, current_value = ?, condition = ?, description = ? WHERE item_id = ?";
+        String sql = "UPDATE items SET item_name = ?, brand = ?, model = ?, serial_number = ?, purchase_date = ?, purchase_price = ?, current_value = ?, condition = ?, description = ?, category_id = ? WHERE item_id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, item.getItemName());
             stmt.setString(2, item.getBrand());
@@ -115,7 +116,8 @@ public class ItemDAO {
             stmt.setBigDecimal(7, item.getCurrentValue());
             stmt.setString(8, item.getCondition());
             stmt.setString(9, item.getDescription());
-            stmt.setInt(10, item.getItemId());
+            stmt.setInt(10, item.getCategoryId());
+            stmt.setInt(11, item.getItemId());
 
             int affectedRows = stmt.executeUpdate();
             return affectedRows > 0;
@@ -151,6 +153,12 @@ public class ItemDAO {
         item.setCondition(rs.getString("condition"));
         item.setDescription(rs.getString("description"));
         item.setCreatedAt(rs.getTimestamp("created_at"));
+        try {
+            item.setCategoryId(rs.getInt("category_id"));
+        } catch (SQLException e) {
+            // Handle case where category_id column might not exist yet
+            LOGGER.log(Level.WARNING, "category_id column not found", e);
+        }
         return item;
     }
 }
