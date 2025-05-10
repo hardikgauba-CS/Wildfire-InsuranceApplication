@@ -99,3 +99,4 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+target/
