@@ -1,5 +1,5 @@
 # Wildfire Insurance Inventory System
-<img width="608" alt="Home" src="https://github.com/user-attachments/assets/171e20c2-52aa-4082-a9a8-8cd00110e89f" />
+<img width="500" alt="Home" src="https://github.com/user-attachments/assets/171e20c2-52aa-4082-a9a8-8cd00110e89f" />
 
 ## Project Overview
 
